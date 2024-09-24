@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Cloud Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <h1>Welcome to My Cloud Website</h1>
+    <button id="fetchMessage">Fetch Message</button>
+    <p id="message"></p>
+    <script>
+        document.getElementById('fetchMessage').addEventListener('click', () => {
+            fetch('https://REGION-PROJECT_ID.cloudfunctions.net/helloWorld')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('message').innerText = data;
+                });
+        });
+    </script>
+</body>
+
+</html>
